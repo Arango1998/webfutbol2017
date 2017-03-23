@@ -25,6 +25,33 @@ and open the template in the editor.
                 <h:commandButton value="Registrar" action="#{categoriaManagedBean.registrarCategoria()}"/>
             </h:form>
         </f:view>
+        
+        
+        <f:view>
+
+
+            <h:form>
+                <h1><h:outputText value="Create/Edit"/></h1>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="FechaPago:" for="fechaPago" />
+                    <h:inputText id="fechaPago" value="#{pagoManagedBean.pago.fechaPago}" title="FechaPago" required="true" requiredMessage="The FechaPago field is required.">
+                        <f:convertDateTime pattern="MM/dd/yyyy" />
+                    </h:inputText>
+                    <h:outputLabel value="Monto:" for="monto" />
+                    <h:inputText id="monto" value="#{pagoManagedBean.pago.monto}" title="Monto" required="true" requiredMessage="The Monto field is required."/>
+                    <h:outputLabel value="Estado:" for="estado" />
+                    <h:inputText id="estado" value="#{pagoManagedBean.pago.estado}" title="Estado" required="true" requiredMessage="The Estado field is required."/>
+                    <h:outputLabel value="FkIdJugador:" for="fkIdJugador" />
+                    <h:selectOneMenu id="fkIdJugador" value="#{pagoManagedBean.pago.fkIdJugador}" title="FkIdJugador" required="true" requiredMessage="The FkIdJugador field is required.">
+                        <!-- TODO: update below reference to list of available items-->
+                        <f:selectItems value="#{usuarioManagedBean.listUsers()}" var="user" itemLabel="#{user.primerNombre}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <h:commandButton value="Registrarpago" action="#{pagoManagedBean.registrarPago()}"/>
+            </h:form>
+        </f:view>
+
+        
 
     </body>
 </html>

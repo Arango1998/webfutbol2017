@@ -42,7 +42,7 @@ import javax.xml.bind.annotation.XmlTransient;
     @NamedQuery(name = "ActividadElectiva.findByNombreActividad", query = "SELECT a FROM ActividadElectiva a WHERE a.nombreActividad = :nombreActividad"),
     @NamedQuery(name = "ActividadElectiva.findByHoraInicio", query = "SELECT a FROM ActividadElectiva a WHERE a.horaInicio = :horaInicio"),
     @NamedQuery(name = "ActividadElectiva.findByHoraFin", query = "SELECT a FROM ActividadElectiva a WHERE a.horaFin = :horaFin")})
-public class ActividadElectiva implements Serializable {
+public class ActividadElectiva implements Serializable, IDTO {
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -164,6 +164,11 @@ public class ActividadElectiva implements Serializable {
     @Override
     public String toString() {
         return "com.webfutbol2017.backend.persistence.entities.ActividadElectiva[ idActividad=" + idActividad + " ]";
+    }
+
+    @Override
+    public String obtenerLlavePrimaria() {
+     return idActividad.toString();
     }
     
 }
