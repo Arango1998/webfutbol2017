@@ -5,17 +5,16 @@
  */
 package com.webfutbol2017.frontend.utilities.converters;
 
-import com.webfutbol2017.backend.persistence.entities.Jugador;
+import com.webfutbol2017.backend.persistence.entities.Localidad;
 import javax.faces.convert.FacesConverter;
 
 /**
  *
  * @author Cristian Suesca
  */
-@FacesConverter (forClass = Jugador.class)
-public class JugadorConverter extends AbstractConverter{
-    public JugadorConverter(){
-    this.nameManagedBean = "estadoUsuarioBean";
+@FacesConverter (forClass = Localidad.class)
+public class LocalidadConverter extends AbstractConverter{
+    public LocalidadConverter(){
+    this.nameManagedBean = "localidadManagedBean";
     }
-    
 }

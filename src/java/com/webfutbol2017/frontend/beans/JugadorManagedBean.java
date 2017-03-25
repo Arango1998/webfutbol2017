@@ -17,7 +17,7 @@ import javax.enterprise.context.RequestScoped;
 
 /**
  *
- * @author Iesua
+ * @author Cristian Suesca
  */
 @Named(value = "jugadorManagedBean")
 @RequestScoped
@@ -25,10 +25,20 @@ public class JugadorManagedBean implements Serializable, InterfaceController<Jug
 
     private Jugador jugador;
     @EJB
-    private JugadorFacade jugf;
+    private JugadorFacade jf;
     
     
     public JugadorManagedBean() {
+    }
+    
+    @PostConstruct
+    public void init(){
+        jugador = new Jugador();
+    }
+
+    @Override
+    public Jugador getObjectByKey(Integer key) {
+    return jf.find(key);
     }
 
     public Jugador getJugador() {
@@ -39,42 +49,9 @@ public class JugadorManagedBean implements Serializable, InterfaceController<Jug
         this.jugador = jugador;
     }
     
-    
-    @PostConstruct
-    public void init(){
-        jugador = new Jugador();
+        public List<Jugador> listar(){
+        return jf.findAll();
     }
-    
-    
-    public void registrarJugador(){
-        jugf.create(jugador);
-    }
-    
-    public void modificarJugador(){
-        jugf.edit(jugador);
-    }
-    
-    public void eliminarJugador(Jugador j){
-        jugf.remove(jugador);
-    }
-    
-    public List<Jugador> listarJugador(){
-        return jugf.findAll();
-    }
-    
-    public String actualizarJugador(Jugador ju){
-        jugador = ju;
-        return "";
-    }
-
-    @Override
-    public Jugador getObjectByKey(Integer key) {
-        return jugf.find(key);
-    }
-    
-    
-    
-    
     
     
     

@@ -70,24 +70,5 @@ public class UsuarioManagedBean implements Serializable, InterfaceController<Usu
         return uf.findAll();
     }
 
-    public void crearUsuario() {
-        try {
-            uf.create(usuario);
-        } catch (Exception e) {
-        }
-
-    }
-    
-    
-    
-    public void crearUsuarioAcudiente(){
-        try {
-            usuario.setIdEstado(getEstadoUsuarioManagedBean().getObjectByKey(1));
-            usuario.setIdTipoRol(getRolManagedBean().getObjectByKey(4));
-            uf.create(usuario);
-        } catch (Exception e) {
-        }
-    
-    }
-
+   
 }

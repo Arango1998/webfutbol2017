@@ -7,6 +7,8 @@ package com.webfutbol2017.frontend.beans;
 
 import com.webfutbol2017.backend.persistence.entities.Pago;
 import com.webfutbol2017.backend.persistence.facades.PagoFacade;
+import com.webfutbol2017.frontend.utilities.converters.InterfaceController;
+import java.io.Serializable;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
@@ -19,7 +21,7 @@ import javax.enterprise.context.RequestScoped;
  */
 @Named(value = "pagoManagedBean")
 @RequestScoped
-public class PagoManagedBean {
+public class PagoManagedBean implements Serializable, InterfaceController<Pago>{
 
     /**
      * Creates a new instance of PagoManagedBean
@@ -58,5 +60,10 @@ public class PagoManagedBean {
     public List<Pago> listarPago() {
 
         return pagof.findAll();
+    }
+
+    @Override
+    public Pago getObjectByKey(Integer key) {
+    return pagof.find(key);
     }
 }

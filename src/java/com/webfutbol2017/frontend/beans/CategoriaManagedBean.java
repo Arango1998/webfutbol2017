@@ -2,6 +2,7 @@ package com.webfutbol2017.frontend.beans;
 
 import com.webfutbol2017.backend.persistence.entities.Categoria;
 import com.webfutbol2017.backend.persistence.facades.CategoriaFacade;
+import com.webfutbol2017.frontend.utilities.converters.InterfaceController;
 import java.io.Serializable;
 import java.util.List;
 import javax.annotation.PostConstruct;
@@ -11,7 +12,7 @@ import javax.enterprise.context.RequestScoped;
 
 @Named(value = "categoriaManagedBean")
 @RequestScoped
-public class CategoriaManagedBean implements Serializable {
+public class CategoriaManagedBean implements Serializable, InterfaceController<Categoria> {
 
     @EJB
     private CategoriaFacade categoriaEJB;
@@ -34,14 +35,13 @@ public class CategoriaManagedBean implements Serializable {
         return categoriaEJB.findAll();
     }
 
-    public void registrarCategoria() {
-        try {
-            categoriaEJB.create(categoria);
-        } catch (Exception e) {
-        }
+ 
+    public CategoriaManagedBean() {
     }
 
-    public CategoriaManagedBean() {
+    @Override
+    public Categoria getObjectByKey(Integer key) {
+    return categoriaEJB.find(key);
     }
 
 }

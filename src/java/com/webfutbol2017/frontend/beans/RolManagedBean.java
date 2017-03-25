@@ -53,9 +53,6 @@ public class RolManagedBean implements Serializable, InterfaceController<Rol> {
         
         return rf.findAll();
     }
-    
-    public void create() {
-        rf.create(rol);
-    }
+
     
 }

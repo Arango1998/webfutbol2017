@@ -47,9 +47,6 @@ public class EstadoUsuarioManagedBean implements Serializable, InterfaceControll
         return ef.findAll();
     }
     
-    public void crearEstadoUsuario() {
-        ef.create(estadoUsuario);
-        
-    }
+
     
 }

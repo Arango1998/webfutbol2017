@@ -41,7 +41,7 @@ import javax.xml.bind.annotation.XmlTransient;
     @NamedQuery(name = "EncuentroTorneo.findAll", query = "SELECT e FROM EncuentroTorneo e"),
     @NamedQuery(name = "EncuentroTorneo.findByIdEncuentro", query = "SELECT e FROM EncuentroTorneo e WHERE e.idEncuentro = :idEncuentro"),
     @NamedQuery(name = "EncuentroTorneo.findByHoraInicio", query = "SELECT e FROM EncuentroTorneo e WHERE e.horaInicio = :horaInicio")})
-public class EncuentroTorneo implements Serializable {
+public class EncuentroTorneo implements Serializable, IDTO {
 
     private static final long serialVersionUID = 1L;
     @Id
@@ -169,6 +169,11 @@ public class EncuentroTorneo implements Serializable {
     @Override
     public String toString() {
         return "com.webfutbol2017.backend.persistence.entities.EncuentroTorneo[ idEncuentro=" + idEncuentro + " ]";
+    }
+
+    @Override
+    public String obtenerLlavePrimaria() {
+    return idEncuentro.toString();
     }
     
 }

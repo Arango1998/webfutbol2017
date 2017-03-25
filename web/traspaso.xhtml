@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>TODO supply a title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <body>
+       
+        
+        
+        
+         <h1 class="branco">Datos personales Jugador</h1>
+                                    <div class="form-group">
+                                        <f:view>
+                                            <h:form>
+
+                                                <div class="rowContainer">
+
+                                                    <label id="branco" class="col-sm-2 control-label">Primer Nombre</label>
+                                                    <div class="col-sm-4">
+                                                        <h:inputText id="primerNombre" value="#{usuarioManagedBean.usuario.primerNombre}" class="form-control" title="PrimerNombre" required="true" requiredMessage="The PrimerNombre field is required."/>
+                                                    </div>
+                                                </div>
+                                                <div class="rowContainer">
+                                                    <label id="branco" class="col-sm-2 control-label">Segundo Nombre</label>
+                                                    <div class="col-sm-4">
+                                                        <h:inputText id="segundoNombre" value="#{usuarioManagedBean.usuario.segundoNombre}" class="form-control"   title="SegundoNombre" />
+
+
+                                                    </div>
+                                                </div>
+                                                <br></br>
+                                                <br></br>
+                                                <div class="rowContainer">
+                                                    <label id="branco" class="col-sm-2 control-label">Primer Apellido</label>
+                                                    <div class="col-sm-4">
+                                                        <h:inputText id="primerApellido" value="#{usuarioManagedBean.usuario.primerApellido}" class="form-control" title="PrimerApellido" required="true" requiredMessage="The PrimerApellido field is required."/>
+
+                                                    </div>
+                                                </div>
+
+
+                                                <div class="rowContainer">
+                                                    <label id="branco" class="col-sm-2 control-label">Segundo Apellido</label>
+                                                    <div class="col-sm-4">
+                                                        <h:inputText id="segundoApellido" value="#{usuarioManagedBean.usuario.segundoApellido}" class="form-control"  title="SegundoApellido" />
+
+                                                    </div>
+                                                </div>
+                                                <br></br>
+                                                <br></br>
+
+
+
+                                                <div class="rowContainer">
+                                                    <h:outputLabel id="branco" class="col-sm-2 control-label" value="Documento:" for="documento" />
+                                                    <div class="col-sm-4">
+                                                        <h:inputText id="documento" value="#{usuarioManagedBean.usuario.documento}" class="form-control" title="Documento" required="true" requiredMessage="The Documento field is required."/>
+                                                    </div>
+                                                </div>
+
+                                                <div class="rowContainer">
+                                                    <label id="branco" class="col-sm-2 control-label">Fecha Nacimiento</label>
+                                                    <div class="col-sm-4">
+                                                        <h:inputText id="fechaDeNacimento" value="#{usuarioManagedBean.usuario.fechaDeNacimento}" class="form-control" title="FechaDeNacimento" required="true" requiredMessage="The FechaDeNacimento field is required.">
+                                                            <f:convertDateTime pattern="MM/dd/yyyy" />
+                                                        </h:inputText>
+                                                    </div>
+                                                </div>
+                                                <br></br>
+                                                <br></br>
+                                                <div class="rowContainer">
+                                                    <label id="branco" class="col-sm-2 control-label">Correo</label>
+                                                    <div class="col-sm-4">
+                                                        <h:inputText id="correo" value="#{usuarioManagedBean.usuario.correo}" class="form-control" title="Correo" />
+                                                    </div>
+                                                </div>
+                                                <div class="rowContainer">
+                                                    <label id="branco" class="col-sm-2 control-label">Telefono</label>
+                                                    <div class="col-sm-4">
+                                                        <h:inputText id="telefono" value="#{usuarioManagedBean.usuario.telefono}" class="form-control" title="Telefono" required="true" requiredMessage="The Telefono field is required."/>
+
+                                                    </div>
+                                                </div>
+                                                <br></br>
+                                                <br></br>
+                                                   <div class="rowContainer">
+                                                    <label id="branco" class="col-sm-2 control-label">Genero</label>
+                                                    <div class="col-sm-4">
+                                                         <h:inputText id="genero" value="#{usuarioManagedBean.usuario.genero}"  class="form-control" title="Genero" required="true" requiredMessage="The Genero field is required."/>
+
+                                              
+                                                    </div>
+                                                </div>
+                                                
+                                                   <div class="rowContainer">
+                                                    <label id="branco" class="col-sm-2 control-label">RH</label>
+                                                     <div class="col-sm-1">
+                                                         <h:inputText id="rh" value="#{usuarioManagedBean.usuario.rh}" class="form-control" title="Rh" required="true" requiredMessage="The Rh field is required."/>
+                                               
+                                              
+                                                    </div>
+                                                </div>
+                                                 
+                                                  <div class="rowContainer">
+                                                    <label id="branco" class="col-sm-2 control-label">EPS</label>
+                                                     <div class="col-sm-2">
+                                                         <h:inputText id="eps" value="#{usuarioManagedBean.usuario.eps}" class="form-control" title="Eps" required="true" requiredMessage="The Eps field is required."/>
+                                                
+                                              
+                                                    </div>
+                                                </div>
+                                                
+                                                  <div class="rowContainer">
+                                                    <label id="branco" class="col-sm-2 control-label">Clave</label>
+                                                    <div class="col-sm-4">
+                                                         <h:inputText id="clave" value="#{usuarioManagedBean.usuario.clave}" class="form-control" title="Clave" required="true" requiredMessage="The Clave field is required."/>
+                                              
+                                                    </div>
+                                                </div>
+                                                  <div class="rowContainer">
+                                                    <label id="branco" class="col-sm-2 control-label">confirmar Clave</label>
+                                                    <div class="col-sm-4">
+                                                         <h:inputText id="clave" value="#{usuarioManagedBean.usuario.clave}" class="form-control" title="Clave" required="true" requiredMessage="The Clave field is required."/>
+                                              
+                                                    </div>
+                                                </div>
+                                                
+                                                  
+
+
+
+
+                                                
+
+                                                <h:commandButton value="registrar" actionListener="#{usuarioManagedBean.crearUsuarioAcudiente()}"/>
+                                            </h:form>
+                                        </f:view>
+
+
+        
+        
+        
+        
+    </body>
+</html>
