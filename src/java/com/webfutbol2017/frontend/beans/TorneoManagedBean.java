@@ -13,6 +13,8 @@ import java.io.Serializable;
 import java.util.List;
 import javax.annotation.PostConstruct;
 import javax.ejb.EJB;
+import javax.faces.application.FacesMessage;
+import javax.faces.context.FacesContext;
 
 /**
  *
@@ -48,7 +50,14 @@ public class TorneoManagedBean implements Serializable {
     }
     
     public void registrarTorneo() {
-        TorneoEJB.create(torneo);
+       try {
+
+            TorneoEJB.create(torneo);
+            FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "", "Ciudad registrada con éxito"));
+
+        } catch (Exception e) {
+
+        }
         
     }
     
