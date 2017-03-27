@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+    <h:head>
+        <title>TODO supply a title</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+    <h:body>
+        <f:view>
+
+
+            <h:form>
+                <
+                h1><h:outputText value="Create/Edit"/></h1>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="NombreBarrio:" for="nombreBarrio" />
+                    <h:inputText id="nombreBarrio" value="#{barrioManagaedBean.barrio.nombreBarrio}" title="NombreBarrio" required="true" requiredMessage="The NombreBarrio field is required."/>
+                    <h:outputLabel value="FkIdLocalidad:" for="fkIdLocalidad" />
+                    <h:selectOneMenu id="fkIdLocalidad" value="#{barrioManagaedBean.barrio.fkIdLocalidad}" title="FkIdLocalidad" required="true" requiredMessage="The FkIdLocalidad field is required.">
+                        <!-- TODO: update below reference to list of available items-->
+                        <f:selectItems value="#{localidadManagedBean.listarLocalidad()}" var="lisLocalidad" itemLabel="#{lisLocalidad.nombreLocalidad}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+            </h:form>
+        </f:view>
+
+        <f:view>
+
+
+            <h:form>
+                <h1><h:outputText value="Create/Edit"/></h1>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="NombreTorneo:" for="nombreTorneo" />
+                    <h:inputText id="nombreTorneo" value="#{torneoManagedBean.torneo.nombreTorneo}" title="NombreTorneo" required="true" requiredMessage="The NombreTorneo field is required."/>
+                    <h:outputLabel value="Organizador:" for="organizador" />
+                    <h:inputText id="organizador" value="#{torneoManagedBean.torneo.organizador}" title="Organizador" required="true" requiredMessage="The Organizador field is required."/>
+                    <h:outputLabel value="DatosContactoOrganizador:" for="datosContactoOrganizador" />
+                    <h:inputTextarea rows="4" cols="30" id="datosContactoOrganizador" value="#{torneoManagedBean.torneo.datosContactoOrganizador}" title="DatosContactoOrganizador" required="true" requiredMessage="The DatosContactoOrganizador field is required."/>
+                   
+                    <h:outputLabel value="FechaInicio:" for="fechaInicio" />
+                    <p:calendar id="popup" value="#{torneoManagedBean.torneo.fechaInicio}"/>
+                    
+                    <h:outputLabel value="FechaFin:" for="fechaFin" />
+                    <p:calendar id="effect" value="#{torneoManagedBean.torneo.fechaFin}"/>
+                </h:panelGrid>
+            </h:form>
+        </f:view>
+
+    </h:body>
+</html>
